@@ -20,7 +20,7 @@ export const SITE_RECIPE: SiteRecipe = {
     taskDetailPage: true,
     taskCard: false,
     contactPage: true,
-    loginPage: false,
-    registerPage: false,
+    loginPage: true,
+    registerPage: true,
   },
 }

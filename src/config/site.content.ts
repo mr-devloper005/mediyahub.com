@@ -2,80 +2,80 @@ import type { TaskKey } from '@/lib/site-config'
 
 export const siteContent = {
   navbar: {
-    tagline: 'Independent news desk',
+    tagline: 'Media Distribution Platform',
   },
   footer: {
-    tagline: 'Simple publishing for press-style updates',
+    tagline: 'Built for modern press release teams',
   },
   hero: {
-    badge: 'Latest updates',
-    title: ['Clear publishing, simple reading, no extra noise.'],
+    badge: 'Trusted by communication teams',
+    title: ['Publish releases with speed, trust, and measurable reach.'],
     description:
-      'A minimal article-style publishing template built for regular updates, announcements, and media distribution posts.',
+      'MediyaHub.com helps brands publish news, distribute stories, and keep journalists updated through a clean, fast newsroom experience.',
     primaryCta: {
-      label: 'Browse latest posts',
+      label: 'Browse newswire',
       href: '/updates',
     },
     secondaryCta: {
-      label: 'Contact us',
-      href: '/contact',
+      label: 'View pricing',
+      href: '/pricing',
     },
-    searchPlaceholder: 'Search posts',
-    focusLabel: 'Latest',
-    featureCardBadge: 'editor note',
-    featureCardTitle: 'Recent updates appear directly on the homepage.',
+    searchPlaceholder: 'Search releases by title, brand, or topic',
+    focusLabel: 'Newswire',
+    featureCardBadge: 'platform note',
+    featureCardTitle: 'Every release is structured for fast scanning and sharing.',
     featureCardDescription:
-      'The homepage works as a clean front page so new posts stay visible without decorative sections getting in the way.',
+      'Press-focused metadata, clean cards, and readable detail pages help teams publish quickly without sacrificing credibility.',
   },
   home: {
     metadata: {
-      title: 'Latest updates and newsroom posts',
+      title: 'MediyaHub Newswire',
       description:
-        'Read the latest updates, announcements, and stories through a simple archive-first publishing experience.',
-      openGraphTitle: 'Latest updates and newsroom posts',
+        'Discover the latest press releases, company announcements, and media updates published on MediyaHub.com.',
+      openGraphTitle: 'MediyaHub Newswire',
       openGraphDescription:
-        'A simple publishing template for updates, announcements, and readable article pages.',
-      keywords: ['newsroom posts', 'latest updates', 'announcements', 'press articles'],
+        'Browse recent releases, open full stories, and explore the MediyaHub distribution network.',
+      keywords: ['press release distribution', 'newswire', 'media hub', 'brand announcements'],
     },
-    introBadge: 'About',
-    introTitle: 'A quiet publishing template made for regular updates.',
+    introBadge: 'About MediyaHub',
+    introTitle: 'A newsroom-style platform designed for media announcements.',
     introParagraphs: [
-      'This template is designed for sites that publish straightforward updates and want the homepage to behave like a clean front page rather than a product landing page.',
-      'Posts are visible immediately, archives stay easy to scan, and the reading page keeps the focus on the article itself.',
-      'The interface is intentionally simple so the site feels usable, familiar, and fast to update.',
+      'MediyaHub.com combines publication-focused UX with a clean SaaS interface so communication teams can publish and distribute confidently.',
+      'Visitors can scan news quickly on listing pages, open complete releases on rich detail pages, and navigate by category and recency.',
+      'The platform design keeps clarity first: readable typography, structured cards, and low-friction discovery.',
     ],
-    sideBadge: 'What it prioritizes',
+    sideBadge: 'What teams get',
     sidePoints: [
-      'Recent posts directly on the homepage.',
-      'Simple archive layout with sidebar search and recent items.',
-      'Readable article pages without comments or extra modules.',
-      'A publishing-first structure that stays easy to maintain.',
+      'Fast release publishing surfaces.',
+      'Structured archive browsing with search and filters.',
+      'Readable single-release experiences with social sharing.',
+      'A scalable visual system for media-focused products.',
     ],
     primaryLink: {
-      label: 'Open archive',
+      label: 'Open newswire',
       href: '/updates',
     },
     secondaryLink: {
-      label: 'Contact desk',
-      href: '/contact',
+      label: 'Explore pricing',
+      href: '/pricing',
     },
   },
   cta: {
-    badge: 'Get in touch',
-    title: 'Use this template when publishing regular updates matters more than visual effects.',
+    badge: 'Start publishing today',
+    title: 'Launch your next press release with MediyaHub.com.',
     description:
-      'A straightforward layout for announcements, media coverage, partner updates, and newsroom-style content.',
+      'Choose a plan, publish your update, and share a polished release page designed for journalists, partners, and customers.',
     primaryCta: {
-      label: 'Contact us',
-      href: '/contact',
+      label: 'See plans',
+      href: '/pricing',
     },
     secondaryCta: {
-      label: 'View archive',
+      label: 'Browse latest news',
       href: '/updates',
     },
   },
-  taskSectionHeading: 'Latest posts',
-  taskSectionDescriptionSuffix: 'Read the newest published updates.',
+  taskSectionHeading: 'Latest releases',
+  taskSectionDescriptionSuffix: 'Read newly published media updates.',
 } as const
 
 export const taskPageMetadata: Record<Exclude<TaskKey, 'comment' | 'org' | 'social'>, { title: string; description: string }> = {
@@ -108,8 +108,8 @@ export const taskPageMetadata: Record<Exclude<TaskKey, 'comment' | 'org' | 'soci
     description: 'Open PDFs and downloadable files.',
   },
   mediaDistribution: {
-    title: 'Latest updates',
-    description: 'Read the latest published updates and announcements.',
+    title: 'Press releases',
+    description: 'Browse the latest press releases and media announcements.',
   },
 }
 
@@ -128,13 +128,14 @@ export const taskIntroCopy: Record<
   comment: { title: 'Comments', paragraphs: ['Commentary and response posts.'], links: [{ label: 'Home', href: '/' }] },
   org: { title: 'Organizations', paragraphs: ['Organization pages and entities.'], links: [{ label: 'Home', href: '/' }] },
   mediaDistribution: {
-    title: 'Latest updates',
+    title: 'Newswire',
     paragraphs: [
-      'This archive is designed for straightforward publishing: regular updates, announcements, and media-style posts presented in a clean reading format.',
-      'The layout stays simple so visitors can scan headlines quickly, open stories easily, and move through the archive without distraction.',
+      'This section is optimized for press release discovery with clear metadata, structured summaries, and direct access to full stories.',
+      'Use filters and search to find relevant updates quickly, then open each release page for complete details and media-ready reading.',
     ],
     links: [
       { label: 'Home', href: '/' },
+      { label: 'Pricing', href: '/pricing' },
       { label: 'Contact', href: '/contact' },
     ],
   },

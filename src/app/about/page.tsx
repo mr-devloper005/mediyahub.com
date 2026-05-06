@@ -9,7 +9,7 @@ const stats = [
   { value: "60+", label: "Media channels covered" },
   { value: "13K+", label: "Organizations using us" },
   { value: "160+", label: "Partnered platforms" },
-  { value: "92K+", label: "Press releases published" },
+  { value: "92K+", label: "Newswire published" },
 ];
 
 const headlineCards = [
@@ -68,7 +68,7 @@ export default function AboutPage() {
               About MediyaHub
             </p>
             <h1 className="mt-4 max-w-4xl text-4xl font-semibold tracking-[-0.03em] text-white sm:text-5xl">
-              Press release distribution and regulatory disclosure experts
+              Newswire distribution and regulatory disclosure experts
             </h1>
             <div className="mt-6 grid gap-5 lg:grid-cols-[1.2fr_0.8fr]">
               <p className="max-w-2xl text-sm leading-8 text-[#d8e4ff]">
@@ -141,7 +141,7 @@ export default function AboutPage() {
 
         <section className="w-full border-y border-[#1d4f9d]/20 bg-[linear-gradient(145deg,#1452a1_0%,#123f80_100%)] px-6 py-12 text-center text-white shadow-[0_24px_55px_rgba(16,46,92,0.35)] sm:px-8">
           <h2 className="mx-auto max-w-3xl text-3xl font-semibold tracking-[-0.03em] sm:text-4xl">
-            Join more teams choosing {SITE_CONFIG.name} for press release distribution
+            Join more teams choosing {SITE_CONFIG.name} for newswire distribution
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-sm leading-8 text-[#d7e7ff]">
             Publish with confidence, scale your communication reach, and give your audience a cleaner reading experience.

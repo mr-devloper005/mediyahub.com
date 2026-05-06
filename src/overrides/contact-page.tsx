@@ -42,21 +42,6 @@ export function ContactPageOverride() {
             </form>
 
             <div className="space-y-4">
-              <div className="rounded-2xl border border-[#edd6b3] bg-[#0d1e44] p-5 text-white sm:p-6">
-                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#ffd480]">Support Hours</p>
-                <p className="mt-2 text-sm leading-7 text-[#d6dff3]">Monday to Friday</p>
-                <p className="text-sm leading-7 text-[#d6dff3]">8:30am to 5:00pm Pacific (PDT)</p>
-              </div>
-
-              <div className="rounded-2xl border border-[#edd6b3] bg-white p-5 sm:p-6">
-                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#8c6530]">Telephone</p>
-                <p className="mt-2 text-lg font-semibold text-[#122144]">+1 888-880-9539</p>
-                <p className="mt-4 text-xs font-semibold uppercase tracking-[0.18em] text-[#8c6530]">US Address</p>
-                <p className="mt-2 text-sm leading-7 text-[#55617f]">Suite 1400 - 505 Second Avenue, Seattle, WA 98104, USA</p>
-                <p className="mt-4 text-xs font-semibold uppercase tracking-[0.18em] text-[#8c6530]">Canada Address</p>
-                <p className="mt-2 text-sm leading-7 text-[#55617f]">Suite 203 - 901 West 3rd St, North Vancouver, BC V7P 3P9</p>
-              </div>
-
               <div className="rounded-2xl border border-[#edd6b3] bg-[linear-gradient(135deg,#FAB12F,#f59e0b)] p-5 text-[#221705] sm:p-6">
                 <p className="text-xs font-semibold uppercase tracking-[0.18em]">Quick Answers</p>
                 <h2 className="mt-2 text-xl font-semibold">Check our FAQs for fast solutions</h2>

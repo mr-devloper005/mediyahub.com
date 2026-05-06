@@ -10,7 +10,6 @@ export const NAVBAR_OVERRIDE_ENABLED = true
 const primaryLinks = [
   { label: 'Home', href: '/' },
   { label: 'Newswire', href: '/updates' },
-  { label: 'Pricing', href: '/pricing' },
   { label: 'Contact', href: '/contact' },
 ] as const
 
@@ -26,7 +25,7 @@ export function NavbarOverride() {
           </span>
           <div className="hidden sm:block">
             <p className="text-sm font-semibold tracking-[0.12em] text-[#ffd480]">MEDIYAHUB</p>
-            <p className="text-[11px] text-[#b6c4df]">Press Release Network</p>
+            <p className="text-[11px] text-[#b6c4df]">Newswire Network</p>
           </div>
         </Link>
 

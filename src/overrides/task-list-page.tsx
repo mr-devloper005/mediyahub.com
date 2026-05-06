@@ -78,8 +78,8 @@ export async function TaskListPageOverride({ category, q, date }: { task: TaskKe
                 Explore company announcements, product updates, partnerships, and market news from the MediyaHub network.
               </p>
             </div>
-            <Link href="/pricing" className="inline-flex rounded-full border border-[#dfc08e] bg-[#fff7e8] px-4 py-2 text-sm font-semibold text-[#3f2f13]">
-              Explore plans
+            <Link href="/updates" className="inline-flex rounded-full border border-[#dfc08e] bg-[#fff7e8] px-4 py-2 text-sm font-semibold text-[#3f2f13]">
+              Browse archive
             </Link>
           </div>
 
@@ -155,8 +155,7 @@ export async function TaskListPageOverride({ category, q, date }: { task: TaskKe
                       </p>
                       <h2 className="mt-2 line-clamp-2 text-xl font-semibold leading-snug text-[#122144]">{post.title}</h2>
                       <p className="mt-3 line-clamp-3 text-sm leading-7 text-[#5a6582]">{excerpt(post.summary)}</p>
-                      <div className="mt-4 flex items-center justify-between text-xs text-[#6f7896]">
-                        <span>{new Date(post.publishedAt || Date.now()).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</span>
+                      <div className="mt-4 flex items-center justify-end text-xs text-[#6f7896]">
                         <span>{post.authorName || 'MediyaHub Desk'}</span>
                       </div>
                     </div>

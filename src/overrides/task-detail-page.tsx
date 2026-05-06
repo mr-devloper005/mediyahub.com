@@ -28,7 +28,9 @@ function getImage(post: any, fallback: string) {
 export async function TaskDetailPageOverride({ slug }: { task: TaskKey; slug: string }) {
   const post = await fetchTaskPostBySlug('mediaDistribution', slug)
   if (!post) notFound()
-  const related = (await fetchTaskPosts('mediaDistribution', 8)).filter((item) => item.slug !== slug).slice(0, 3)
+  const allPosts = await fetchTaskPosts('mediaDistribution', 10)
+  const related = allPosts.filter((item) => item.slug !== slug).slice(0, 3)
+  const recent = allPosts.filter((item) => item.slug !== slug).slice(0, 5)
   const content = (post.content || {}) as Record<string, unknown>
   const html = formatRichHtml((content.body as string) || post.summary || '', 'Post body will appear here.')
   const subtitle = post.summary || (typeof content.description === 'string' ? content.description : '')
@@ -49,7 +51,6 @@ export async function TaskDetailPageOverride({ slug }: { task: TaskKey; slug: st
           <h1 className="mt-5 text-4xl font-semibold leading-tight tracking-[-0.03em] sm:text-5xl">{post.title}</h1>
           {subtitle ? <p className="mt-4 max-w-4xl text-base leading-8 text-[#dbe6ff]">{subtitle}</p> : null}
           <div className="mt-6 flex flex-wrap items-center gap-3 text-sm text-[#c9d7f3]">
-            <span className="rounded-full bg-white/10 px-3 py-1">{new Date(post.publishedAt || Date.now()).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</span>
             <span>By {post.authorName || 'MediyaHub Editorial Team'}</span>
           </div>
         </div>
@@ -107,10 +108,32 @@ export async function TaskDetailPageOverride({ slug }: { task: TaskKey; slug: st
 
             <div className="rounded-2xl border border-[#e6cfaa] bg-white p-5">
               <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#8c6530]">Release details</p>
-              <p className="mt-3 text-sm text-[#5a6582]">Published {new Date(post.publishedAt || Date.now()).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</p>
-              <p className="mt-2 text-sm text-[#5a6582]">Author: {post.authorName || 'MediyaHub Editorial Team'}</p>
+              <p className="mt-3 text-sm text-[#5a6582]">Author: {post.authorName || 'MediyaHub Editorial Team'}</p>
               <Link href="/updates" className="mt-4 inline-flex rounded-full bg-[#12244d] px-4 py-2 text-sm font-semibold text-white transition hover:bg-[#0b1734]">
                 Back to newswire
+              </Link>
+            </div>
+
+            <div className="rounded-2xl border border-[#e6cfaa] bg-white p-5">
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#8c6530]">Recent releases</p>
+              <div className="mt-4 grid gap-3">
+                {recent.map((item) => (
+                  <Link
+                    key={item.id}
+                    href={`/updates/${item.slug}`}
+                    className="group block rounded-xl border border-[#f0dfc0] bg-[#fffaf2] p-3 transition hover:bg-white hover:shadow-sm"
+                  >
+                    <p className="text-xs uppercase tracking-[0.12em] text-[#8c6530]">
+                      {String((item.content as any)?.category || 'Release')}
+                    </p>
+                    <p className="mt-1 line-clamp-2 text-sm font-semibold leading-snug text-[#132348] group-hover:text-[#0b1734]">
+                      {item.title}
+                    </p>
+                  </Link>
+                ))}
+              </div>
+              <Link href="/updates" className="mt-4 inline-flex text-xs font-semibold text-[#22356a] hover:text-[#0b1734]">
+                View all releases →
               </Link>
             </div>
           </aside>

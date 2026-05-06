@@ -8,8 +8,8 @@ export function LoginPageOverride() {
   return (
     <div className="min-h-screen bg-[#fef7ec] text-[#1a2340]">
       <NavbarShell />
-      <main className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-        <section className="grid gap-6 lg:grid-cols-[0.95fr_1.05fr]">
+      <main className="mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:px-8">
+        <section className="my-12 grid gap-6 lg:grid-cols-[0.95fr_1.05fr]">
           <div className="rounded-[2rem] border border-[#e7d0aa] bg-[linear-gradient(165deg,#0d1f46_0%,#183467_100%)] p-7 text-white">
             <h1 className="text-4xl font-semibold tracking-[-0.03em]">Sign In</h1>
             <p className="mt-4 text-sm leading-8 text-[#d5dff5]">

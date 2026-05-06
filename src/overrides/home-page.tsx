@@ -9,7 +9,7 @@ export const HOME_PAGE_OVERRIDE_ENABLED = true
 
 function excerpt(text?: string | null) {
   const value = (text || '').trim()
-  if (!value) return 'Read the complete press release for details.'
+  if (!value) return 'Read the complete newswire for details.'
   return value.length > 170 ? value.slice(0, 167).trimEnd() + '...' : value
 }
 
@@ -64,8 +64,8 @@ export async function HomePageOverride() {
                   Browse Releases
                   <ArrowRight className="h-4 w-4" />
                 </Link>
-                <Link href="/pricing" className="inline-flex items-center rounded-full border border-white/20 bg-white/10 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/15">
-                  View Pricing
+                <Link href="/updates" className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/15">
+                  Browse Archive
                 </Link>
               </div>
               <div className="mt-9 grid gap-3 sm:grid-cols-3">
@@ -172,7 +172,7 @@ export async function HomePageOverride() {
                 </div>
                 <div className="p-5">
                   <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#8c6530]">
-                    {String((post.content as any)?.category || 'Press release')}
+                    {String((post.content as any)?.category || 'Newswire')}
                   </p>
                   <h3 className="mt-2 line-clamp-2 text-lg font-semibold text-[#162240]">{post.title}</h3>
                   <p className="mt-3 line-clamp-3 text-sm leading-7 text-[#5a6582]">{excerpt(post.summary)}</p>
@@ -187,14 +187,14 @@ export async function HomePageOverride() {
             <div>
               <p className="inline-flex items-center gap-2 rounded-full bg-[#fef3e2] px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-[#8c6530]">
                 <Sparkles className="h-3.5 w-3.5" />
-                Pricing preview
+                Why MediyaHub
               </p>
-              <h2 className="mt-4 text-3xl font-semibold tracking-[-0.03em] text-[#17233f]">Flexible plans for startups, agencies, and enterprise teams.</h2>
+              <h2 className="mt-4 text-3xl font-semibold tracking-[-0.03em] text-[#17233f]">Built for media teams that need speed, clarity, and reach.</h2>
               <div className="mt-5 grid gap-3 sm:grid-cols-2">
                 {[
-                  'Basic - launch and publish quickly',
-                  'Pro - add analytics and broader distribution',
-                  'Premium - full reach with newsroom support',
+                  'Structured release pages built for journalists',
+                  'Fast publishing with editorial controls',
+                  'Scan-friendly design across all devices',
                 ].map((item) => (
                   <p key={item} className="inline-flex items-center gap-2 text-sm text-[#4f5a78]">
                     <CheckCircle2 className="h-4 w-4 text-[#d68a1b]" />
@@ -202,20 +202,20 @@ export async function HomePageOverride() {
                   </p>
                 ))}
               </div>
-              <Link href="/pricing" className="mt-6 inline-flex items-center gap-2 rounded-full bg-[#11254f] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#0a1835]">
-                Compare plans
+              <Link href="/contact" className="mt-6 inline-flex items-center gap-2 rounded-full bg-[#11254f] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#0a1835]">
+                Get in touch
                 <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
             <div className="space-y-4 rounded-2xl border border-[#efdcbb] bg-[#fffaf2] p-5">
-              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#8c6530]">Primary Focus</p>
-              <h3 className="text-xl font-semibold text-[#17233f]">Media Press Release</h3>
+              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#8c6530]">Our Focus</p>
+              <h3 className="text-xl font-semibold text-[#17233f]">Media Newswire</h3>
               <p className="text-sm leading-7 text-[#5a6582]">
-                This site prioritizes press release publishing and discovery. Other task routes remain available through direct URLs and system surfaces.
+                MediyaHub is dedicated to newswire publishing and discovery — giving your releases the visibility they deserve across media channels.
               </p>
               <div className="grid gap-2 text-sm text-[#4f5a78]">
-                <p>Secondary surfaced pages: Pricing, Contact</p>
-                <p>All task routes remain active in the shared base system.</p>
+                <p>Structured pages optimised for media pickup.</p>
+                <p>Archive and search built for journalists and editors.</p>
               </div>
             </div>
           </div>
@@ -255,7 +255,7 @@ export async function HomePageOverride() {
               },
               {
                 quote: 'The release pages are clean, professional, and easy for journalists to scan quickly.',
-                name: 'Rohan Mehta',
+                name: 'Arjun Kapoor',
                 role: 'Communications Lead, BrightEdge',
                 image: FREEPIK_IMAGES.testimonialB,
               },
@@ -292,10 +292,7 @@ export async function HomePageOverride() {
             <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
               {feed.map((post) => (
                 <article key={post.id} className="rounded-2xl border border-[#efdcbb] bg-white p-5 transition hover:-translate-y-0.5 hover:shadow-[0_18px_32px_rgba(23,34,62,0.08)]">
-                  <p className="text-xs uppercase tracking-[0.14em] text-[#8c6530]">
-                    {new Date(post.publishedAt || Date.now()).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
-                  </p>
-                  <h3 className="mt-2 line-clamp-2 text-lg font-semibold text-[#162240]">{post.title}</h3>
+                  <h3 className="line-clamp-2 text-lg font-semibold text-[#162240]">{post.title}</h3>
                   <p className="mt-3 line-clamp-3 text-sm leading-7 text-[#5a6582]">{excerpt(post.summary)}</p>
                   <Link href={`/updates/${post.slug}`} className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-[#22356a]">
                     Open release
@@ -311,7 +308,7 @@ export async function HomePageOverride() {
           <div className="rounded-[2rem] border border-[#e7cc9f] bg-[linear-gradient(145deg,#12244d_0%,#1d3b77_100%)] p-7 text-white shadow-[0_24px_60px_rgba(16,29,60,0.35)] sm:p-9">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#ffd480]">Call to action</p>
             <h2 className="mt-3 max-w-3xl text-3xl font-semibold tracking-[-0.03em] sm:text-4xl">
-              Ready to publish your next press release?
+              Ready to publish your next newswire?
             </h2>
             <p className="mt-4 max-w-2xl text-sm leading-8 text-[#d6e1f8]">
               Start with MediyaHub to reach journalists, publish polished release pages, and track visibility from one dashboard.

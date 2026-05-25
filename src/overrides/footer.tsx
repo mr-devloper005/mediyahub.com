@@ -43,6 +43,7 @@ export function FooterOverride() {
           </div>
         </div>
 
+
         <div className="mt-10 flex flex-col gap-3 border-t border-white/10 pt-5 text-sm text-[#97a8c8] sm:flex-row sm:items-center sm:justify-between">
           <p>&copy; {new Date().getFullYear()} {SITE_CONFIG.name}. All rights reserved.</p>
           <p>Only primary flows are highlighted in navigation. All task routes remain supported.</p>
